@@ -13,7 +13,9 @@ http://localhost:8080
 
 ### Fonts
 
-You'll need to add your own fonts (I didn't include, to avoid potential licensing issues - put them in the `fonts/` directory.
+You'll need to add your own fonts (I didn't include, to avoid potential licensing issues)
+
+Put them in the `fonts/` directory.
 
 ### Recommended Fonts:
 | font | url |
