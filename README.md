@@ -1,5 +1,16 @@
 ## MiniPOV Code Generator
 
+### Running:
+to run locally, under docker:
+
+```
+docker run -d -p 8080:80 -v "${PWD}/fonts":/fonts thecase:minipov:latest
+```
+
+### Access in local browser:
+
+http://localhost:8080
+
 ### Fonts
 
 You'll need to add your own fonts (I didn't include, to avoid potential licensing issues - put them in the `fonts/` directory.
@@ -13,9 +24,3 @@ You'll need to add your own fonts (I didn't include, to avoid potential licensin
 | pixelmix | https://www.dafont.com/pixelmix.font |
 | silkscreen | https://www.dafont.com/silkscreen.font |
 
-### Running:
-to run locally, under docker:
-
-```
-docker run -d -e WEBROOT=/var/www/html -p 8080:80 -v "${PWD}/fonts":/fonts thecase:minipov:latest
-```
