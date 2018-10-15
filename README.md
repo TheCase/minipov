@@ -24,3 +24,5 @@ You'll need to add your own fonts (I didn't include, to avoid potential licensin
 | pixelmix | https://www.dafont.com/pixelmix.font |
 | silkscreen | https://www.dafont.com/silkscreen.font |
 
+
+![](./preview.png)
