@@ -4,7 +4,7 @@
 to run locally, under docker:
 
 ```
-docker run -d -p 8080:80 -v "${PWD}/fonts":/fonts thecase:minipov:latest
+docker run -d -p 8080:80 -v "${PWD}/fonts":/fonts thecase/minipov:latest
 ```
 
 ### Access in local browser:
