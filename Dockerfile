@@ -1,7 +1,5 @@
 FROM richarvey/nginx-php-fpm:2.0.5
 
-RUN apk -U add freetype
-
 ADD https://dl.dafont.com/dl/?f=04b_08 /tmp/04b_08.zip
 ADD https://dl.dafont.com/dl/?f=bitdust_two /tmp/bitdust.zip
 ADD https://dl.dafont.com/dl/?f=bit_trip7 /tmp/bit_trip7.zip
@@ -19,7 +17,6 @@ RUN cd /tmp && \
     mv /fonts/BitTrip7\(sRB\).TTF /fonts/bittrip7.ttf && \
     chmod 644 /fonts/*.ttf
 
-#RUN #docker-php-ext-install -j$(nproc) iconv  && \
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd
 
