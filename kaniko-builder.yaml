@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minipov-kaniko-builder
+  namespace: kaniko
+spec:
+  containers:
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:latest
+      args: ["--context=git://github.com//thecase/minipov.git",
+             "--destination=thecase/minipov:1.0.0",
+             "--destination=thecase/minipov:latest",
+             "--dockerfile=Dockerfile"]
+      volumeMounts:
+        - name: kaniko-secret
+          mountPath: /kaniko/.docker
+  restartPolicy: Never
+  volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: dockerhub-registry
+        items:
+          - key: .dockerconfigjson
+            path: config.json
