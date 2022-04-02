@@ -1,4 +1,4 @@
-<?
+<?php
 /* test code
 $array = array(
    "00000011",

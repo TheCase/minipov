@@ -4,13 +4,11 @@
 </head>
 <body>
 <strong>minipov code display pixel code generator</strong>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp;
 [<a href="/">text generator</a>]
-<br />
-akula [at] repulsor [dot] net
 <p />
 
-<?
+<?php
 
 if (isset($_POST["smug"])) $smug = $_POST["smug"];
 if (!isset($_POST["cols"])){
@@ -28,7 +26,7 @@ columns (250 max): <input type="text" name="cols" value="<?=$cols?>" size="4">
 <input type="submit" name="newcols" value="set">
 <br />
 <table cellpadding="0" cellspacing="0">
-<?
+<?php
 for($bit=7;$bit>=0;$bit--){
    print "<tr>\n";
    for($line=0;$line<$cols;$line++){
@@ -45,7 +43,7 @@ print "<input type=\"hidden\" name=\"limit\" value=\"$limit\" />\n";
 <input type="submit" name="smug" value="generate">
 </form>
 
-<?
+<?php
 }else{
    print "use your back button to edit<br>";
    print "or you can <a href=\"\">clear</a> the whole thing<p />";
@@ -69,41 +67,6 @@ print "<input type=\"hidden\" name=\"limit\" value=\"$limit\" />\n";
    print $output;
 }
 ?>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2647861-1");
-pageTracker._trackPageview();
-</script>
-
-<p />
-&nbsp;
-<p />
-&nbsp;
-<p />
-&nbsp;
-<p />
-&nbsp;
-<p />
-&nbsp;
-<p />
-&nbsp;
-<p />
-<script type="text/javascript"><!--
-google_ad_client = "pub-7045767875932893";
-/* repulsor banner */
-google_ad_slot = "8367645209";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
 
 </body>
 </html>

@@ -4,21 +4,11 @@
 </td><td valign="top">
 [<a href="/pixels.php">pixel&nbsp;generator<a/>]
 </td></tr>
-<tr><td><font size="2" face="arial">
-if this tool is of value to you, please consider a donation to my beer fund (donate button) &mdash;&gt;
-</font>
-</td><td valign="middle" align="center">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="XBJRLULW6UKGU">
-<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></td></tr>
 <tr><td valign="top" colspan="2">
 
 
 <form method="post">
-<?
+<?php
 $mode_arr = array("minipov"=>"B8(X),","blinky"=>"RETLW   B'X'");
 if (!isset($_POST["mode_set"])){ 
    $mode_set = "minipov"; 
@@ -36,11 +26,11 @@ print $modeout."<p />\n";
 
 ?>
 enter text to generate:<br />
-<input type="text" name="text" value="<? 
+<input type="text" name="text" value="<?php
 if (isset($_POST["text"])){ print $_POST["text"]; } 
 ?>" size="30" maxlength="30" />
 <select name="font">
-<?
+<?php
 
    if (isset($_POST["font"])){
       $font = $_POST["font"];
@@ -60,7 +50,7 @@ foreach($fonts as $item){
 </select>
 <input type="submit" value="generate">
 <p />
-<?
+<?php
 
 if (isset($_POST["text"])){
 
@@ -106,11 +96,11 @@ code (click, Select All, Copy):
 <textarea rows="30" cols="20" wrap="virtual" scrollbars="yes"><?=$output?></textarea>
 </form>
 
-<? /*
+<?php /*
 <pre><span id="copytext" style="font-family:courier new,monospace;white-space:pre;font-size:12px;"><?=$output?></span></pre>
  */ ?>
 
-<?
+<?php
 
 imagedestroy($image);
 
