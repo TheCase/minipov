@@ -10,8 +10,8 @@
 <form method="post">
 <?php
 $mode_arr = array("minipov"=>"B8(X),","blinky"=>"RETLW   B'X'");
-if (!isset($_POST["mode_set"])){ 
-   $mode_set = "minipov"; 
+if (!isset($_POST["mode_set"])){
+   $mode_set = "minipov";
 }else{
    $mode_set = $_POST["mode_set"];
 }
@@ -27,7 +27,7 @@ print $modeout."<p />\n";
 ?>
 enter text to generate:<br />
 <input type="text" name="text" value="<?php
-if (isset($_POST["text"])){ print $_POST["text"]; } 
+if (isset($_POST["text"])){ print htmlspecialchars($_POST["text"]); }
 ?>" size="30" maxlength="30" />
 <select name="font">
 <?php
@@ -60,7 +60,7 @@ if (isset($_POST["text"])){
    $x = 0;
    $y = $size;
    $angle = 0;
-   
+
    $fontfile = "/fonts/$font";
 
    $bbox = imageftbbox($size, $angle, $fontfile, $text);

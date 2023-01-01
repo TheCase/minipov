@@ -14,7 +14,7 @@ if (isset($_POST["smug"])) $smug = $_POST["smug"];
 if (!isset($_POST["cols"])){
    $cols = 50;
 }else{
-   $cols = $_POST["cols"];
+   $cols = htmlspecialchars($_POST["cols"]);
    if ($cols > 250){ $cols = 250; }
 }
 

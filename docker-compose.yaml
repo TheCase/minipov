@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  minipov:
+    build:
+      context: .
+    ports:
+      - 8080:80
+    volumes:
+      - ./php:/var/www/html:ro
